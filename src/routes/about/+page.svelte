@@ -6,18 +6,12 @@
 
 <section>
 	<div class="container py-24 mx-auto max-w-screen-lg">
-		<Headline
-			headline="Carreira"
-			description=""
-		/>
+		<Headline headline="Carreira" description="" />
 
 		<div class="flex flex-col gap-4">
 			<h2 class="h2">Resumo Rápido</h2>
 			<p>
-				Sou um Desenvolvedor Web Full-stack, sou de Alvorada-RS e trabalho nessa área desde 2020. A
-				linguagem que domino melhor é o JavaScript e minhas principais experiências foram na área de
-				educação. No momento, estou procurando por um novo desafio para continuar evoluindo na minha
-				carreira.
+			Minha trajetória como programador começou em 2020 (na pandemia). Voltei a estudar faculdade (Tecnólogo Desenvolvimento Web) e cursos online (Udemy). Desde então, tenho trabalhado principalmente com o ecossistema Web: JavaScript, Node.js, TypeScript e frameworks frontend (React, Vue, Astro, Svelte).
 			</p>
 		</div>
 
@@ -31,14 +25,10 @@
 		<div class="flex flex-col gap-4 py-8">
 			<h2 class="h2">Próximos Passos</h2>
 			<p>
-				Estou focado em evoluir como desenvolvedor, primeiramente resolvendo problemas reais quando
-				possível e dedicando um tempo para me aprofundar em conhecimentos que me tornem mais
-				eficiente, tais como algoritmo, código limpo, padrões de projeto e arquitetura de software.
+				Atualmente: Desenvolvo projetos pessoais que resolvem problemas reais - meus ou de pessoas do meu convívio. Nesses projetos tenho explorado outras linguagens e frameworks: PHP (Laravel), C#, Go, Ruby (Rails), ASP.NET Core, e integração com LLMs (Claude, ChatGPT, Gemini) para aumentar produtividade. Faço isso para continuar aprendendo, me manter atualizado e aumentar minha empregabilidade.
 			</p>
 			<p>
-				Estou a procura de um novo desafio onde possa integrar uma equipe e vivenciar a experiência
-				de desenvolver projetos de larga escala. Além disso, desejo contribuir para tornar a vida
-				das pessoas melhor, caso seja possível.
+				Além disso, tenho o sonho de aplicar meus conhecimentos em projetos que tenham impacto positivo real na vida das pessoas, principalmente as mais humildes.
 			</p>
 		</div>
 		<div class="flex flex-col gap-4 py-4">
