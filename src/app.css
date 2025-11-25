@@ -2,8 +2,6 @@
 
 @import "@skeletonlabs/skeleton";
 
-@import "@skeletonlabs/skeleton/optional/presets";
-
 @import "@skeletonlabs/skeleton/themes/wintry";
 
 :root {
