@@ -1,11 +1,23 @@
 <script lang="ts">
-	export let logo = 'dummy.png';
-	export let title = 'Title';
-	export let subtitle = 'Subtitle';
-	export let description = 'A  DESCRIPTION HERE';
-	export let repo = '';
-	export let url = '';
-	export let stack = ['javascript, css, html'];
+	interface Props {
+		logo?: string;
+		title?: string;
+		subtitle?: string;
+		description?: string;
+		repo?: string;
+		url?: string;
+		stack?: any;
+	}
+
+	let {
+		logo = 'dummy.png',
+		title = 'Title',
+		subtitle = 'Subtitle',
+		description = 'A  DESCRIPTION HERE',
+		repo = '',
+		url = '',
+		stack = ['javascript, css, html']
+	}: Props = $props();
 
 	const ICON_SIZE = '36px';
 </script>
@@ -35,15 +47,15 @@
 	<ul class="flex gap-4 items-center justify-center">
 		{#each stack as tech}
 			<li class="">
-				<iconify-icon icon="simple-icons:{tech}" width={ICON_SIZE} />
+				<iconify-icon icon="simple-icons:{tech}" width={ICON_SIZE}></iconify-icon>
 			</li>
 		{/each}
 	</ul>
 	<hr class="opacity-50 -mx-4" />
 	<div class="flex gap-4 items-center justify-between">
 		<a href={url} target="_blank" class="flex items-center gap-2"
-			><iconify-icon icon="mdi:open-in-new" width={ICON_SIZE} /> <span>Visite</span></a
+			><iconify-icon icon="mdi:open-in-new" width={ICON_SIZE}></iconify-icon> <span>Visite</span></a
 		>
-		<a href={repo} target="_blank"><iconify-icon icon="mdi:github" width={ICON_SIZE} /></a>
+		<a href={repo} target="_blank"><iconify-icon icon="mdi:github" width={ICON_SIZE}></iconify-icon></a>
 	</div>
 </div>

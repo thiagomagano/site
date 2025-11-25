@@ -16,7 +16,7 @@
 
 		<ul class="grid w-full grid-cols-2 gap-8 py-4 md:pt-9">
 			<li class="flex gap-2 items-center">
-				<iconify-icon icon="mdi:whatsapp" width={SOCIAL_ICON_SIZE} />
+				<iconify-icon icon="mdi:whatsapp" width={SOCIAL_ICON_SIZE}></iconify-icon>
 				<a
 					class="hover:underline"
 					href="https://api.whatsapp.com/send?phone={PHONE}&text={BODYMSG}"
@@ -25,15 +25,15 @@
 				</a>
 			</li>
 			<li class="flex gap-2 items-center">
-				<iconify-icon icon="mdi:linkedin" width={SOCIAL_ICON_SIZE} />
+				<iconify-icon icon="mdi:linkedin" width={SOCIAL_ICON_SIZE}></iconify-icon>
 				<a class="hover:underline" href="http://linkedin.com/in/thiagomagano"> Linkedin </a>
 			</li>
 			<li class="flex gap-2 items-center">
-				<iconify-icon icon="mdi:github" width={SOCIAL_ICON_SIZE} />
+				<iconify-icon icon="mdi:github" width={SOCIAL_ICON_SIZE}></iconify-icon>
 				<a class="hover:underline" href="http://github.com/thiagomagano"> Github </a>
 			</li>
 			<li class="flex gap-2 items-center">
-				<iconify-icon icon="mdi:instagram" width={SOCIAL_ICON_SIZE} />
+				<iconify-icon icon="mdi:instagram" width={SOCIAL_ICON_SIZE}></iconify-icon>
 				<a class="hover:underline" href="http://instagram.com/thimagano"> Instagram</a>
 			</li>
 		</ul>

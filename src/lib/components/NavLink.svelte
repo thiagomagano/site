@@ -1,9 +1,19 @@
-<script>
-	export let href = '/';
-	export let icon = 'mdi:not';
-	export let label = 'Link';
-	export let active = false;
-	export let target = '';
+<script lang="ts">
+	interface Props {
+		href?: string;
+		icon?: string;
+		label?: string;
+		active?: boolean;
+		target?: string;
+	}
+
+	let {
+		href = '/',
+		icon = 'mdi:not',
+		label = 'Link',
+		active = false,
+		target = ''
+	}: Props = $props();
 </script>
 
 <a
@@ -13,6 +23,6 @@
 		: 'border-b-transparent'}"
 	{target}
 >
-	<iconify-icon {icon} width="24" />
+	<iconify-icon {icon} width="24"></iconify-icon>
 	<span>{label}</span>
 </a>

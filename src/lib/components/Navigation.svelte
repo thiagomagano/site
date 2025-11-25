@@ -41,8 +41,8 @@
 	<ul class="flex flex-col flex-start">
 		{#each navData as { slug, icon, label }}
 			<li>
-				<a href={slug} class="" on:click={drawerClose}>
-					<iconify-icon {icon} width="24" />
+				<a href={slug} class="" onclick={drawerClose}>
+					<iconify-icon {icon} width="24"></iconify-icon>
 					<span>{label}</span>
 				</a>
 			</li>
