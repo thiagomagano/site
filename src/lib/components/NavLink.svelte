@@ -22,6 +22,7 @@
 		? 'border-b-primary-500'
 		: 'border-b-transparent'}"
 	{target}
+	aria-label={label}
 >
 	<iconify-icon {icon} width="24"></iconify-icon>
 	<span>{label}</span>

@@ -34,7 +34,7 @@
 		{#each navData as { slug, icon, label }}
 			<li>
 				<a href={slug} class="">
-					<iconify-icon {icon} width="24" />
+					<iconify-icon {icon} width="24"> </iconify-icon>
 					<span>{label}</span>
 				</a>
 			</li>
