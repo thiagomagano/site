@@ -19,7 +19,6 @@
 		</div>
 
 		<div class="flex flex-col gap-4 py-8">
-			<h2 class="h2">Carreira</h2>
 			{#each jobs as job}
 				<Job {job} />
 			{/each}
