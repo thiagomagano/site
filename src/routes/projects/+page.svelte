@@ -5,7 +5,7 @@
 </script>
 
 <section class="">
-	<div class="container py-16 mx-auto max-w-screen-lg">
+	<div class="container py-16 mx-auto max-w-(--breakpoint-lg)">
 		<Headline
 			headline="Projetos"
 			description="Aqui estão os principais projetos que desenvolvi, você pode clicar nos cards para saber mais

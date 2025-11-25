@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.postcss';
+	import '../app.css';
 
 	import {
 		AppShell,
@@ -40,7 +40,7 @@
 
 <AppShell slotSidebarLeft="w-56 p-4" slotPageContent="px-4 md:px-0">
 	{#snippet header()}
-	
+
 			<!-- App Bar -->
 			<AppBar
 				background="transparent"
@@ -50,7 +50,7 @@
 				slotTrail="place-content-end order-3"
 			>
 				{#snippet lead()}
-					
+
 						<a
 							href="/"
 							class="btn btn-sm border-b-4 hover:border-b-surface-500 hover:text-opacity-75 font-mono {data.url ===
@@ -60,10 +60,10 @@
 						>
 							<span class="font-bold tracking-wide">thiagomagano.com.br</span>
 						</a>
-					
+
 					{/snippet}
 				{#snippet children()}
-					
+
 						<nav class="lg:flex hidden flex-nowrap gap-2">
 							<NavLink
 								href="/about"
@@ -101,14 +101,14 @@
 								</svg>
 							</span>
 						</button>
-					
+
 					{/snippet}
 
 				{#snippet trail()}
 						<LightSwitch />
 					{/snippet}
 			</AppBar>
-		
+
 	{/snippet}
 	{#key data.url}
 		<div
@@ -119,7 +119,7 @@
 		</div>
 	{/key}
 	{#snippet pageFooter()}
-	
+
 			<div class=" bg-opacity-75 text-center">
 				<div
 					class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-center items-center gap-4"
@@ -129,6 +129,6 @@
 					<SocialLinks iconSize="28" classes="mt-2" />
 				</div>
 			</div>
-		
+
 	{/snippet}
 </AppShell>

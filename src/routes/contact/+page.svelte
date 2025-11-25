@@ -7,7 +7,7 @@
 </script>
 
 <section class="body-font relative">
-	<div class="container py-24 mx-auto max-w-screen-lg">
+	<div class="container py-24 mx-auto max-w-(--breakpoint-lg)">
 		<Headline
 			headline="Contato"
 			description="Opa, que bom que tu quer falar comigo. Tu podes me encontrar pelas

@@ -5,7 +5,7 @@
 </script>
 
 <section>
-	<div class="container py-24 mx-auto max-w-screen-lg">
+	<div class="container py-24 mx-auto max-w-(--breakpoint-lg)">
 		<Headline headline="Carreira" description="" />
 
 		<div class="flex flex-col gap-4">
@@ -47,10 +47,10 @@
 				conversar contigo e ver como nós podemos nos ajudar!
 			</p>
 			<div class="py-4 flex gap-4 flex-wrap md:flex-1">
-				<a class="btn variant-filled-primary flex-grow" href="/contact">Fale comigo</a>
-				<a class="btn variant-filled-primary flex-grow" href="/projects">Conheça meus projetos</a>
+				<a class="btn variant-filled-primary grow" href="/contact">Fale comigo</a>
+				<a class="btn variant-filled-primary grow" href="/projects">Conheça meus projetos</a>
 				<a
-					class="btn variant-outline-primary flex-grow"
+					class="btn variant-outline-primary grow"
 					href="/documents/cv.pdf"
 					download="/documents/curriculo-thiagomagano-2025.pdf">Baixe meu currículo em PDF</a
 				>

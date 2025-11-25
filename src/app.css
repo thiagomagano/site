@@ -1,20 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
-
-/* Write your global styles here, in PostCSS syntax */
-html,
-body {
-	@apply h-full overflow-hidden;
-}
-body {
-	@apply bg-surface-50-900-token leading-relaxed;
-}
-
-p {
-	@apply leading-relaxed;
-}
+@import 'tailwindcss';
 
 :root {
 	font-size: 18px;

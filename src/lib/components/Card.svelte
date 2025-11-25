@@ -40,7 +40,7 @@
 		</h3>
 	</div>
 
-	<p class="leading-relaxed text-base flex-grow">
+	<p class="leading-relaxed text-base grow">
 		{description}
 	</p>
 
