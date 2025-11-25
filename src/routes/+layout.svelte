@@ -2,16 +2,17 @@
 	import '../app.css';
 
 	import NavLink from '$lib/components/NavLink.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 	import SocialLinks from '$lib/components/SocialLinks.svelte';
 
-	let { data } = $props();
+	let { data, children } = $props();
 
 	const dataAtual = new Date();
 	const anoAtual = dataAtual.getFullYear();
 </script>
 
-<!-- <h2 class="py-4 pl-8">Thiago Magano</h2>
+<!-- 
+TODO Logica do mobile
+<h2 class="py-4 pl-8">Thiago Magano</h2>
 <hr />
 <Navigation />
 <SocialLinks iconSize="28" classes="flex p-4 pl-8 align-center gap-2 " /> -->
@@ -56,7 +57,9 @@
 			>Baixar Currículo
 		</a>
 
-		<!-- <button class="lg:hidden btn btn-sm" aria-label="hamburguer-menu">
+		<!-- 
+    TODO Aqui preciso refazer a logica do mobile
+    <button class="lg:hidden btn btn-sm" aria-label="hamburguer-menu">
 			<span>
 				<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 					<rect width="100" height="20" />
@@ -68,7 +71,7 @@
 	</header>
 
 	<main>
-		<slot />
+		{@render children()}
 	</main>
 
 	<footer>
@@ -78,7 +81,7 @@
 			>
 				<p class="text-gray-400 text-sm text-center sm:text-left">© {anoAtual} Thiago Magano</p>
 
-				<SocialLinks iconSize="28" classes="mt-2" />
+				<SocialLinks iconSize="24" classes="mt-2" />
 			</div>
 		</div>
 	</footer>
