@@ -27,11 +27,10 @@
 		<div class="flex flex-col gap-4 py-8">
 			<h2 class="h2">Próximos Passos</h2>
 			<p>
-				Atualmente: Desenvolvo projetos pessoais que resolvem problemas reais - meus ou de pessoas
-				do meu convívio. Nesses projetos tenho explorado outras linguagens e frameworks: PHP
-				(Laravel), C#, Go, Ruby (Rails), ASP.NET Core, e integração com LLMs (Claude, ChatGPT,
-				Gemini) para aumentar produtividade. Faço isso para continuar aprendendo, me manter
-				atualizado e aumentar minha empregabilidade.
+				Atualmente desenvolvo projetos pessoais que resolvem problemas reais, nesses projetos tenho
+				explorado outras linguagens e frameworks: PHP (Laravel), C#, Go, Ruby (Rails), ASP.NET Core,
+				e integração com LLMs (Claude, ChatGPT, Gemini) para aumentar produtividade. Faço isso para
+				continuar aprendendo, me manter atualizado e aumentar minha empregabilidade.
 			</p>
 			<p>
 				Além disso, tenho o sonho de aplicar meus conhecimentos em projetos que tenham impacto
@@ -41,18 +40,12 @@
 		<div class="flex flex-col gap-4 py-4">
 			<h2 class="h2">Eai, curtiu?</h2>
 			<p>
-				Caso tu tenha se interessado, você pode entrar em contato comigo clicando
-				<a href="/contact" class="font-bold text-tertiary-400">aqui</a>.<br />Vai ser um prazer
-				conversar contigo e ver como nós podemos nos ajudar!
+				Caso tu tenha se interessado, você pode entrar contato comigo,<br />
+				Vai ser um prazer conversar contigo.
 			</p>
 			<div class="py-4 flex gap-4 flex-wrap md:flex-1">
 				<a class="btn preset-filled-primary-500 grow" href="/contact">Fale comigo</a>
 				<a class="btn preset-filled-primary-500 grow" href="/projects">Conheça meus projetos</a>
-				<a
-					class="btn variant-outline-primary grow"
-					href="/documents/cv.pdf"
-					download="/documents/curriculo-thiagomagano-2025.pdf">Baixe meu currículo em PDF</a
-				>
 			</div>
 		</div>
 	</div>

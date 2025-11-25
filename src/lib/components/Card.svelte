@@ -22,7 +22,7 @@
 	const ICON_SIZE = '36px';
 </script>
 
-<div class="card flex flex-col gap-4 p-4 shadow-lg preset-tonal text-center">
+<div class="card flex flex-col gap-4 p-4 shadow-lg preset-outlined-primary-50-950 text-center">
 	<div
 		class="flex items-center justify-center h-44 dark:bg-transparent dark:mx-0 bg-primary-500 -mx-4"
 	>
@@ -53,11 +53,21 @@
 	</ul>
 	<hr class="opacity-50 -mx-4" />
 	<div class="flex gap-4 items-center justify-between">
-		<a href={url} target="_blank" class="flex items-center gap-2">
+		<a
+			href={url}
+			target="_blank"
+			class="flex items-center gap-2 hover:underline hover:text-primary-500"
+		>
 			<iconify-icon icon="mdi:open-in-new" width={ICON_SIZE}></iconify-icon> <span>Visite</span>
 		</a>
-		<a href={repo} target="_blank" aria-label="github">
-			<iconify-icon icon="mdi:github" width={ICON_SIZE}></iconify-icon>
+		<a
+			href={repo}
+			target="_blank"
+			aria-label="github"
+			class="flex items-center gap-2 hover:underline hover:text-primary-500"
+		>
+			<iconify-icon icon="mdi:github" width={ICON_SIZE} class=""></iconify-icon>
+			<span>Código</span>
 		</a>
 	</div>
 </div>

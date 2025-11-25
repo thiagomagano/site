@@ -6,11 +6,7 @@
 
 <section class="">
 	<div class="container py-16 mx-auto max-w-(--breakpoint-lg)">
-		<Headline
-			headline="Projetos"
-			description="Aqui estão os principais projetos que desenvolvi, você pode clicar nos cards para saber mais
-				informações sobre eles."
-		/>
+		<Headline headline="Projetos" description="Aqui estão os principais projetos que desenvolvi" />
 
 		<div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
 			{#each projects as { logo, title, subtitle, description, repo, url, stack, slug }}

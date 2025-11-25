@@ -18,7 +18,7 @@ TODO Logica do mobile
 <SocialLinks iconSize="28" classes="flex p-4 pl-8 align-center gap-2 " /> -->
 
 <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-	<header class="flex justify-between m-4">
+	<header class="flex justify-between p-4">
 		<a
 			href="/"
 			class="btn btn-sm border-b-4 hover:border-b-surface-500 hover:text-opacity-75 font-mono {data.url ===
