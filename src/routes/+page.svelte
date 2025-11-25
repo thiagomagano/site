@@ -30,3 +30,10 @@
 		<a href="/about" class="btn variant-filled-primary w-full">{buttonText}</a>
 	</div>
 </div>
+
+<style lang="postcss">
+	@reference "tailwindcss";
+	:global(html) {
+		background-color: theme(--color-gray-100);
+	}
+</style>
