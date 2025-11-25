@@ -1,5 +1,5 @@
 <script>
-	import { Avatar } from '@skeletonlabs/skeleton';
+	import { Avatar } from '@skeletonlabs/skeleton-svelte';
 
 	const jobLabel = 'Desenvolvedor Full Stack';
 	const description = 'Solucionando problemas na rede mundial de computadores.';
@@ -27,7 +27,7 @@
 	<p>{description}</p>
 
 	<div class="flex gap-4">
-		<a href="/about" class="btn variant-filled-primary w-full">{buttonText}</a>
+		<a href="/about" class="btn preset-filled-primary-500 w-full">{buttonText}</a>
 	</div>
 </div>
 

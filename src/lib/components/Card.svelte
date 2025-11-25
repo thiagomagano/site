@@ -22,7 +22,7 @@
 	const ICON_SIZE = '36px';
 </script>
 
-<div class="card flex flex-col gap-4 p-4 shadow-lg variant-glass text-center">
+<div class="card flex flex-col gap-4 p-4 shadow-lg preset-tonal text-center">
 	<div
 		class="flex items-center justify-center h-44 dark:bg-transparent dark:mx-0 bg-primary-500 -mx-4"
 	>

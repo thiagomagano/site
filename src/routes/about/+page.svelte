@@ -47,8 +47,8 @@
 				conversar contigo e ver como nós podemos nos ajudar!
 			</p>
 			<div class="py-4 flex gap-4 flex-wrap md:flex-1">
-				<a class="btn variant-filled-primary grow" href="/contact">Fale comigo</a>
-				<a class="btn variant-filled-primary grow" href="/projects">Conheça meus projetos</a>
+				<a class="btn preset-filled-primary-500 grow" href="/contact">Fale comigo</a>
+				<a class="btn preset-filled-primary-500 grow" href="/projects">Conheça meus projetos</a>
 				<a
 					class="btn variant-outline-primary grow"
 					href="/documents/cv.pdf"

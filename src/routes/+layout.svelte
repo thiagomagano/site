@@ -2,14 +2,7 @@
 	import '../app.css';
 
 	import {
-		AppShell,
-		AppBar,
-		Toast,
-		LightSwitch,
-		initializeStores,
-		Drawer,
-		getDrawerStore
-	} from '@skeletonlabs/skeleton';
+		AppBar, ToastProvider } from '@skeletonlabs/skeleton-svelte';
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
@@ -30,8 +23,8 @@
 	const anoAtual = dataAtual.getFullYear();
 </script>
 
-<Toast position="t" />
-<Drawer bgDrawer="variant-glass">
+<ToastProvider position="t" />
+<Drawer bgDrawer="preset-tonal">
 	<h2 class="py-4 pl-8">Thiago Magano</h2>
 	<hr />
 	<Navigation />

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Job } from '$data/jobs';
-	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+	import { Accordion } from '@skeletonlabs/skeleton-svelte';
 
 	interface Props {
 		job: Job;
@@ -16,8 +16,8 @@
 	<h4 class="text-sm flex justify-between text-primary-500">
 		<span>{job.func} </span> <span> {job.year} </span>
 	</h4>
-	<Accordion regionControl="variant-glass" regionCaret="variant-glass" regionPanel="variant-glass">
-		<AccordionItem>
+	<Accordion regionControl="preset-tonal" regionCaret="preset-tonal" regionPanel="preset-tonal">
+		<Accordion.Item>
 			{#snippet lead()}
 						<span class="mt-1 block"
 						><iconify-icon icon="mdi:domain" width="24"></iconify-icon>
@@ -29,8 +29,8 @@
 			{#snippet content()}
 						<p class="leading-loose">{job.descEmployee}</p>
 					{/snippet}
-		</AccordionItem>
-		<AccordionItem>
+		</Accordion.Item>
+		<Accordion.Item>
 			{#snippet lead()}
 						<span class="mt-1 block"
 						><iconify-icon icon="mdi:check-all" width="24"></iconify-icon>
@@ -46,8 +46,8 @@
 						{/each}
 					</ul>
 					{/snippet}
-		</AccordionItem>
-		<AccordionItem>
+		</Accordion.Item>
+		<Accordion.Item>
 			{#snippet lead()}
 						<span class="mt-1 block"
 						><iconify-icon icon="mdi:school-outline" width="24"></iconify-icon>
@@ -59,6 +59,6 @@
 			{#snippet content()}
 						<p class="leading-loose">{job.descLearns}</p>
 					{/snippet}
-		</AccordionItem>
+		</Accordion.Item>
 	</Accordion>
 </div>
