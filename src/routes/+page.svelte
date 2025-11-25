@@ -11,13 +11,10 @@
 </svelte:head>
 
 <div class="container mx-auto p-16 space-y-8 flex items-center justify-center flex-col text-center">
-	<Avatar
-		src="/images/avatar.webp"
-		width="w-64"
-		rounded="rounded-full"
-		initials="TM"
-		alt="Foto de Thiago Magano"
-	/>
+	<Avatar class="size-40 background-cover">
+		<Avatar.Image src="/images/avatar.webp" alt="Foto de Perfil Thiago Magano" class="bg-cover" />
+		<Avatar.Fallback>TM</Avatar.Fallback>
+	</Avatar>
 
 	<div class="flex flex-col gap-2">
 		<h1 class="h1 text-4xl font-heading-token">Thiago Magano</h1>

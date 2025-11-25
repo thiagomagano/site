@@ -1,10 +1,4 @@
 <script lang="ts">
-		const drawerStore = getDrawerStore();
-
-	function drawerClose() {
-		drawerStore.close();
-	}
-
 	interface NavData {
 		slug: string;
 		icon: string;
@@ -39,8 +33,8 @@
 	<ul class="flex flex-col flex-start">
 		{#each navData as { slug, icon, label }}
 			<li>
-				<a href={slug} class="" onclick={drawerClose}>
-					<iconify-icon {icon} width="24"></iconify-icon>
+				<a href={slug} class="">
+					<iconify-icon {icon} width="24" />
 					<span>{label}</span>
 				</a>
 			</li>

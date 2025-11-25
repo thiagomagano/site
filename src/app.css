@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
-@import "@skeletonlabs/skeleton";
-
-@import "@skeletonlabs/skeleton/themes/wintry";
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@skeletonlabs/skeleton/themes/wintry';
 
 :root {
 	font-size: 16px;
