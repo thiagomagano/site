@@ -2,8 +2,6 @@
 
 @import '@skeletonlabs/skeleton';
 @import '@skeletonlabs/skeleton-svelte';
-@import '@skeletonlabs/skeleton/themes/wintry';
+@import '@skeletonlabs/skeleton/themes/cerberus';
 
-:root {
-	font-size: 16px;
-}
+@custom-variant dark (&:where(.dark, .dark *));

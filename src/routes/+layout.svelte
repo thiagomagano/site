@@ -17,7 +17,7 @@ TODO Logica do mobile
 <Navigation />
 <SocialLinks iconSize="28" classes="flex p-4 pl-8 align-center gap-2 " /> -->
 
-<div class="h-screen grid grid-rows-[auto_1fr_auto]">
+<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
 	<header class="flex justify-between m-4">
 		<a
 			href="/"
