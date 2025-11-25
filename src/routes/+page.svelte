@@ -1,9 +1,9 @@
 <script>
 	import { Avatar } from '@skeletonlabs/skeleton';
 
-  const jobLabel = "Desenvolvedor Full Stack" 
-  const description = "Solucionando problemas na rede mundial de computadores."
-  const buttonText = "Conheça meu trabalho"
+	const jobLabel = 'Desenvolvedor Full Stack';
+	const description = 'Solucionando problemas na rede mundial de computadores.';
+	const buttonText = 'Conheça meu trabalho';
 </script>
 
 <svelte:head>

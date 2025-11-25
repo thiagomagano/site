@@ -58,8 +58,6 @@
 				>
 					<span class="font-bold tracking-wide">thiagomagano.com.br</span>
 				</a>
-        
-        
 			</svelte:fragment>
 			<svelte:fragment slot="default">
 				<nav class="lg:flex hidden flex-nowrap gap-2">
@@ -69,13 +67,13 @@
 						label="Carreira"
 						active={data.url === '/about'}
 					/>
-          <NavLink
+					<NavLink
 						href="/projects"
 						icon="mdi:code-tags"
 						label="Projetos"
 						active={data.url === '/projects'}
 					/>
-					
+
 					<NavLink
 						href="/contact"
 						icon="mdi:message-outline"
@@ -83,12 +81,11 @@
 						active={data.url === '/contact'}
 					/>
 					<NavLink
-						href="/documents/curriculo-thiagomagano-2025.pdf"
+						href="/documents/cv.pdf"
 						icon="mdi:download-outline"
 						label="Currículo"
 						target="_blank"
 					/>
-          
 				</nav>
 
 				<button class="lg:hidden btn btn-sm" on:click={drawerOpen}>
@@ -108,11 +105,9 @@
 	{#key data.url}
 		<div
 			in:fly|global={{ x: -200, duration: 300, delay: 300 }}
-			out:fly|global={{ x: 200, duration: 300 }
-  }
- >
+			out:fly|global={{ x: 200, duration: 300 }}
+		>
 			<slot />
-      <hr />
 		</div>
 	{/key}
 	<svelte:fragment slot="pageFooter">

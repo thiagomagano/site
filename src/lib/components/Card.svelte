@@ -41,9 +41,9 @@
 	</ul>
 	<hr class="opacity-50 -mx-4" />
 	<div class="flex gap-4 items-center justify-between">
-	
-			<a href={url} target="_blank" class="flex items-center gap-2"><iconify-icon icon="mdi:open-in-new" width={ICON_SIZE} />  <span>Visite</span></a>
-			<a href={repo} target="_blank"><iconify-icon icon="mdi:github" width={ICON_SIZE} /></a>
-		
+		<a href={url} target="_blank" class="flex items-center gap-2"
+			><iconify-icon icon="mdi:open-in-new" width={ICON_SIZE} /> <span>Visite</span></a
+		>
+		<a href={repo} target="_blank"><iconify-icon icon="mdi:github" width={ICON_SIZE} /></a>
 	</div>
 </div>

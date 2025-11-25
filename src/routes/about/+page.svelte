@@ -11,7 +11,10 @@
 		<div class="flex flex-col gap-4">
 			<h2 class="h2">Resumo Rápido</h2>
 			<p>
-			Minha trajetória como programador começou em 2020 (na pandemia). Voltei a estudar faculdade (Tecnólogo Desenvolvimento Web) e cursos online (Udemy). Desde então, tenho trabalhado principalmente com o ecossistema Web: JavaScript, Node.js, TypeScript e frameworks frontend (React, Vue, Astro, Svelte).
+				Minha trajetória como programador começou em 2020 (na pandemia). Voltei a estudar faculdade
+				(Tecnólogo Desenvolvimento Web) e cursos online (Udemy). Desde então, tenho trabalhado
+				principalmente com o ecossistema Web: JavaScript, Node.js, TypeScript e frameworks frontend
+				(React, Vue, Astro, Svelte).
 			</p>
 		</div>
 
@@ -25,10 +28,15 @@
 		<div class="flex flex-col gap-4 py-8">
 			<h2 class="h2">Próximos Passos</h2>
 			<p>
-				Atualmente: Desenvolvo projetos pessoais que resolvem problemas reais - meus ou de pessoas do meu convívio. Nesses projetos tenho explorado outras linguagens e frameworks: PHP (Laravel), C#, Go, Ruby (Rails), ASP.NET Core, e integração com LLMs (Claude, ChatGPT, Gemini) para aumentar produtividade. Faço isso para continuar aprendendo, me manter atualizado e aumentar minha empregabilidade.
+				Atualmente: Desenvolvo projetos pessoais que resolvem problemas reais - meus ou de pessoas
+				do meu convívio. Nesses projetos tenho explorado outras linguagens e frameworks: PHP
+				(Laravel), C#, Go, Ruby (Rails), ASP.NET Core, e integração com LLMs (Claude, ChatGPT,
+				Gemini) para aumentar produtividade. Faço isso para continuar aprendendo, me manter
+				atualizado e aumentar minha empregabilidade.
 			</p>
 			<p>
-				Além disso, tenho o sonho de aplicar meus conhecimentos em projetos que tenham impacto positivo real na vida das pessoas, principalmente as mais humildes.
+				Além disso, tenho o sonho de aplicar meus conhecimentos em projetos que tenham impacto
+				positivo real na vida das pessoas, principalmente as mais humildes.
 			</p>
 		</div>
 		<div class="flex flex-col gap-4 py-4">
@@ -43,7 +51,7 @@
 				<a class="btn variant-filled-primary flex-grow" href="/projects">Conheça meus projetos</a>
 				<a
 					class="btn variant-outline-primary flex-grow"
-					href="/documents/curriculo-thiagomagano-2025.pdf"
+					href="/documents/cv.pdf"
 					download="/documents/curriculo-thiagomagano-2025.pdf">Baixe meu currículo em PDF</a
 				>
 			</div>
