@@ -37,4 +37,4 @@ jobs:
           REMOTE_USER: ${{secrets.VPS_USER}}
           SOURCE: 'build/'
           TARGET: '/var/www/thiagomagano.com.br/'
-          ARGS: 'rlgoDzvO --delete'
+          ARGS: '-rlgoDzvO --delete'
