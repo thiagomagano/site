@@ -9,8 +9,8 @@
 		<Headline headline="Projetos" description="Aqui estão os principais projetos que desenvolvi" />
 
 		<div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-			{#each projects as { logo, title, subtitle, description, repo, url, stack }}
-				<Card {logo} {title} {subtitle} {description} {repo} {url} {stack} />
+			{#each projects as { title, subtitle, description, stack, imageUrl, link, github }}
+				<Card {title} {subtitle} {description} {stack} {imageUrl} {link} {github} />
 			{/each}
 		</div>
 	</div>

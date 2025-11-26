@@ -1,22 +1,22 @@
 <script lang="ts">
 	interface Props {
-		logo?: string;
-		title?: string;
+		title: string;
 		subtitle?: string;
-		description?: string;
-		repo?: string;
-		url?: string;
+		description: string;
 		stack?: string[];
+		imageUrl?: string;
+		link?: string;
+		github: string;
 	}
 
 	let {
-		logo = 'dummy.png',
 		title = 'Title',
 		subtitle = 'Subtitle',
-		description = 'A  DESCRIPTION HERE',
-		repo = '',
-		url = '',
-		stack = ['javascript, css, html']
+		description = 'A DESCRIPTION HERE',
+		stack = ['javascript, css, html'],
+		github = '',
+		link = '',
+		imageUrl = 'dummy.png'
 	}: Props = $props();
 
 	const ICON_SIZE = '36px';
@@ -28,7 +28,7 @@
 	>
 		<img
 			class="rounded w-80 align-middle object-cover object-center"
-			src="/images/logos/{logo}"
+			src="/images/logos/{imageUrl}"
 			alt="content"
 		/>
 	</div>
@@ -54,14 +54,14 @@
 	<hr class="opacity-50 -mx-4" />
 	<div class="flex gap-4 items-center justify-between">
 		<a
-			href={url}
+			href={link}
 			target="_blank"
 			class="flex items-center gap-2 hover:underline hover:text-primary-500"
 		>
 			<iconify-icon icon="mdi:open-in-new" width={ICON_SIZE}></iconify-icon> <span>Visite</span>
 		</a>
 		<a
-			href={repo}
+			href={github}
 			target="_blank"
 			aria-label="github"
 			class="flex items-center gap-2 hover:underline hover:text-primary-500"
