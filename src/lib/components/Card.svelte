@@ -27,7 +27,7 @@
 		class="flex items-center justify-center h-44 dark:bg-transparent dark:mx-0 bg-primary-500 -mx-4"
 	>
 		<img
-			class="rounded w-80 align-middle object-cover object-center"
+			class="rounded w-80 h-44 align-middle object-contain object-center"
 			src="/images/logos/{imageUrl}"
 			alt="content"
 		/>
