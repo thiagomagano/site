@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
 	import Card from '$lib/components/Card.svelte';
-	import { projects } from '$data/projects';
+
 	import Headline from '$lib/components/Headline.svelte';
+
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	let { projects } = data;
 </script>
 
 <section class="">
