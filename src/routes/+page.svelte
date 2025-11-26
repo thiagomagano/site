@@ -3,9 +3,6 @@
 
 	const jobLabel = 'Desenvolvedor Full Stack';
 	const description = 'Solucionando problemas na rede mundial de computadores.';
-
-	let active = $state('carrer');
-	const links = ['carrer', 'projects', 'contact'];
 </script>
 
 <svelte:head>

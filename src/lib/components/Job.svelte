@@ -61,7 +61,7 @@
 						<div {...attributes} transition:slide={{ duration: 150 }}>
 							<ul class="list-disc list-inside">
 								{#each job.descResults as results}
-									<li class="list-item py-2">{@html results}</li>
+									<li class="list-item py-2">{results}</li>
 								{/each}
 							</ul>
 						</div>

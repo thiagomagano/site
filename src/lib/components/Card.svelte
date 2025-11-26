@@ -6,7 +6,7 @@
 		description?: string;
 		repo?: string;
 		url?: string;
-		stack?: any;
+		stack?: string[];
 	}
 
 	let {
