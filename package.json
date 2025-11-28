@@ -15,8 +15,7 @@
 	"devDependencies": {
 		"@skeletonlabs/skeleton": "^4.5.3",
 		"@skeletonlabs/skeleton-svelte": "^4.5.3",
-		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/adapter-node": "^5.4.0",
 		"@sveltejs/kit": "^2.49.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@tailwindcss/vite": "^4.1.17",
@@ -27,8 +26,6 @@
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^8.10.2",
 		"eslint-plugin-svelte": "^2.46.1",
-		"mdsvex": "^0.11.2",
-		"postcss-load-config": "^4.0.2",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"svelte": "^5.44.1",
