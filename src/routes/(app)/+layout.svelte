@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css';
+	import '../../app.css';
 
 	import NavLink from '$lib/components/NavLink.svelte';
 	import SocialLinks from '$lib/components/SocialLinks.svelte';
@@ -10,7 +10,7 @@
 	const anoAtual = dataAtual.getFullYear();
 </script>
 
-<!-- 
+<!--
 TODO Logica do mobile
 <h2 class="py-4 pl-8">Thiago Magano</h2>
 <hr />
@@ -57,7 +57,7 @@ TODO Logica do mobile
 			>Baixar Currículo
 		</a>
 
-		<!-- 
+		<!--
     TODO Aqui preciso refazer a logica do mobile
     <button class="lg:hidden btn btn-sm" aria-label="hamburguer-menu">
 			<span>
