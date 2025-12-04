@@ -43,12 +43,8 @@ export const actions: Actions = {
 
 		const stackRaw = formData.get('stack');
 		const stack = JSON.parse(stackRaw as string);
-
 		// Normalizar para simple-icons
 		const normalizedStack = stack.map(normalizeSimpleIcon);
-
-		// Agora pode salvar no DB / API
-		console.log(normalizedStack);
 
 		//Fazer algumas validações básicas.
 
@@ -60,8 +56,8 @@ export const actions: Actions = {
 					subtitle,
 					description,
 					imageUrl,
-					link,
-					github,
+					link: `https://${link}`,
+					github: `https://github.com/thiagomagano/${github}`,
 					stack: normalizedStack
 				},
 				{},
