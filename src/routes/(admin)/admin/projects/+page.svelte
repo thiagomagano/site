@@ -1,9 +1,15 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import type { Project } from '$data/projects';
 	import { FilePenLine, PackagePlus, Trash } from '@lucide/svelte';
 
 	let { data } = $props();
 	const projects = data.projects as Project[];
+
+	function deletarProjeto(e: Event) {
+		e.preventDefault();
+		console.log('Excluindo projeto...', e.AT_TARGET);
+	}
 </script>
 
 <main>
@@ -37,9 +43,18 @@
 							<button type="button" class="btn-icon" title="Edit" aria-label="Edit">
 								<FilePenLine />
 							</button>
-							<button type="button" class="btn-icon" title="Delete" aria-label="Delete">
-								<Trash />
-							</button>
+							<form method="POST" action="/admin/projects/deleteProject" use:enhance>
+								<input type="hidden" name="id" value={project._id} />
+								<button
+									formaction="?/deleteProject"
+									type="submit"
+									class="btn-icon"
+									title="Delete"
+									aria-label="Delete"
+								>
+									<Trash />
+								</button>
+							</form>
 						</td>
 					</tr>
 				{/each}

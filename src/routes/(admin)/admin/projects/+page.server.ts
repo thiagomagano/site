@@ -1,6 +1,5 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, type Action } from '@sveltejs/kit';
 import { apiClient } from '$lib/api/client.js';
-import type { Project } from '$data/projects.js';
 
 export async function load({ locals, cookies }) {
 	// O hook já verifica autenticação, mas podemos verificar novamente
@@ -11,7 +10,6 @@ export async function load({ locals, cookies }) {
 	try {
 		// Requisição autenticada - cookies são passados automaticamente
 		const projects = await apiClient.get('/projects', {}, cookies);
-		console.log(projects);
 		return {
 			projects,
 			user: locals.user
@@ -24,3 +22,22 @@ export async function load({ locals, cookies }) {
 		};
 	}
 }
+
+export const actions = {
+	deleteProject: async ({ request, cookies }) => {
+		const formData = await request.formData();
+		const id = formData.get('id');
+
+		if (!id || typeof id !== 'string') {
+			return { success: false, message: 'ID inválido' };
+		}
+
+		const res = await apiClient.delete(`/projects/${id}`, {}, cookies);
+		if (!res.ok) {
+			console.log('Deletando projeto: ', id);
+			return { success: false, message: 'Erro ao excluir' };
+		}
+
+		return { success: true };
+	}
+};
