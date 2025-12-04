@@ -1,4 +1,5 @@
 import { apiClient } from '$lib/api/client';
+
 import type { Actions } from './$types';
 
 function normalizeSimpleIcon(name: string): string {
@@ -23,7 +24,9 @@ function normalizeSimpleIcon(name: string): string {
 		drizzle: 'drizzle',
 		vercel: 'vercel',
 		go: 'go',
-		c: 'c'
+		c: 'c',
+		html: 'html',
+		css: 'css'
 	};
 
 	const normalized = name.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -63,9 +66,10 @@ export const actions: Actions = {
 				{},
 				cookies
 			);
+
 			return {
-				message: res.message,
-				sucess: true
+				response: res,
+				success: true
 			};
 		} catch (error) {
 			console.error('Erro ao criar projeto: ', error);

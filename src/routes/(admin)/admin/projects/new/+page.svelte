@@ -1,7 +1,7 @@
 <script lang="ts">
-	let { message, sucess } = $props();
+	let { form } = $props();
 
-	let techInput: string = $state('');
+	let techInput = $state('');
 	let stack: string[] = $state([]);
 
 	function addTech() {
@@ -96,7 +96,9 @@
 
 	<!-- CONSIDERAR FAZER UM PREVIEW? -->
 
-	{#if sucess}
-		<p>{message}</p>
+	{#if form?.success}
+		<p class="p-2 bg-green-200 text-green-800 rounded">
+			Projeto criado com sucesso! ID: {form?.response._id}
+		</p>
 	{/if}
 </main>

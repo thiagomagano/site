@@ -46,7 +46,7 @@
 
 	<ul class="flex gap-4 items-center justify-center">
 		{#each stack as tech}
-			<li class="">
+			<li>
 				<iconify-icon icon="simple-icons:{tech}" width={ICON_SIZE}></iconify-icon>
 			</li>
 		{/each}
