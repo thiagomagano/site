@@ -6,9 +6,14 @@
 	let { data } = $props();
 	const projects = data.projects as Project[];
 
-	function deletarProjeto(e: Event) {
-		e.preventDefault();
-		console.log('Excluindo projeto...', e.AT_TARGET);
+	let deletingId: string | undefined = undefined;
+
+	function confirmDelete(event: Event, id: string) {
+		if (!confirm('Tem certeza que deseja excluir este projeto?')) {
+			event.preventDefault();
+			return;
+		}
+		deletingId = id;
 	}
 </script>
 
@@ -43,7 +48,11 @@
 							<button type="button" class="btn-icon" title="Edit" aria-label="Edit">
 								<FilePenLine />
 							</button>
-							<form method="POST" action="/admin/projects/deleteProject" use:enhance>
+							<form
+								method="POST"
+								action="/admin/projects/deleteProject"
+								onsubmit={(e) => confirmDelete(e, project._id)}
+							>
 								<input type="hidden" name="id" value={project._id} />
 								<button
 									formaction="?/deleteProject"

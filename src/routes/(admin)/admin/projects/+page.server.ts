@@ -1,4 +1,5 @@
-import { redirect, type Action } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
+import type { Actions } from './$types';
 import { apiClient } from '$lib/api/client.js';
 
 export async function load({ locals, cookies }) {
@@ -23,7 +24,7 @@ export async function load({ locals, cookies }) {
 	}
 }
 
-export const actions = {
+export const actions: Actions = {
 	deleteProject: async ({ request, cookies }) => {
 		const formData = await request.formData();
 		const id = formData.get('id');
@@ -32,12 +33,17 @@ export const actions = {
 			return { success: false, message: 'ID inválido' };
 		}
 
-		const res = await apiClient.delete(`/projects/${id}`, {}, cookies);
-		if (!res.ok) {
-			console.log('Deletando projeto: ', id);
-			return { success: false, message: 'Erro ao excluir' };
+		try {
+			const res = await apiClient.delete(`/projects/${id}`, {}, cookies);
+			return {
+				message: res.message
+			};
+		} catch (error) {
+			console.error('Erro ao excluir: ', error?.data?.error);
+			return {
+				error,
+				sucess: false
+			};
 		}
-
-		return { success: true };
 	}
 };
