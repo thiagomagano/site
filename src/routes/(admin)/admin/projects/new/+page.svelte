@@ -1,4 +1,6 @@
 <script lang="ts">
+	let { message, sucess } = $props();
+
 	let techInput: string = $state('');
 	let stack: string[] = $state([]);
 
@@ -16,7 +18,7 @@
 <main class="grid w-full place-items-center">
 	<h1 class="h2">Criando novo projeto</h1>
 
-	<form class="w-full max-w-md space-y-4 p-4">
+	<form class="w-full max-w-md space-y-4 p-4" method="POST" action="?/createProject">
 		<fieldset class="space-y-4">
 			<label class="label">
 				<span class="label-text">Titulo</span>
@@ -32,13 +34,14 @@
 					class="textarea rounded-container"
 					rows="4"
 					placeholder="Descrição breve do projeto"
+					name="description"
 				></textarea>
 			</label>
 
 			<label class="label">
 				<!-- Melhorar isso -->
 				<span class="label-text">Image Url</span>
-				<input class="input" type="url" placeholder="projeto.png" name="imageUrl" />
+				<input class="input" type="text" placeholder="projeto.png" name="imageUrl" />
 			</label>
 			<label class="label">
 				<span class="label-text">Link</span>
@@ -58,7 +61,7 @@
 
 		<div>
 			<label class="label">
-				<span class="label-text"> Tecnologias: </span>
+				<span class="label-text"> Tecnologias</span>
 
 				<div class="flex gap-2">
 					<input
@@ -85,7 +88,13 @@
 			<input type="hidden" name="stack" value={JSON.stringify(stack)} />
 		</div>
 		<fieldset class="flex justify-end">
-			<button type="button" class="btn preset-outlined-surface-300-700">Enviar</button>
+			<button type="submit" class="btn preset-outlined-surface-300-700" formaction="?/createProject"
+				>Enviar</button
+			>
 		</fieldset>
 	</form>
+
+	{#if sucess}
+		<p>{message}</p>
+	{/if}
 </main>
