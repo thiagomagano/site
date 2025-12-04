@@ -20,10 +20,10 @@
 <main>
 	<h1>Projetos</h1>
 	<div class="flex w-full items-end justify-end">
-		<button type="button" class="btn preset-filled-primary-500">
+		<a href="/admin/projects/new" type="button" class="btn preset-filled-primary-500">
 			<span>Novo Projeto</span>
 			<PackagePlus size={18} />
-		</button>
+		</a>
 	</div>
 
 	<div class="table-wrap">
