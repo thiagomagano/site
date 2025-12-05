@@ -8,7 +8,7 @@
 
 	let deletingId: string | undefined = undefined;
 
-	function confirmDelete(event: Event, id: string) {
+	function confirmDelete(event: Event, id: string | undefined) {
 		if (!confirm('Tem certeza que deseja excluir este projeto?')) {
 			event.preventDefault();
 			return;
@@ -57,7 +57,7 @@
 							<form
 								method="POST"
 								action="/admin/projects/deleteProject"
-								onsubmit={(e) => confirmDelete(e, _id)}
+								onsubmit={(e) => confirmDelete(e, project._id)}
 							>
 								<input type="hidden" name="id" value={project._id} />
 								<button
