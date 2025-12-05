@@ -1,38 +1,7 @@
 import { apiClient } from '$lib/api/client';
+import { normalizeStack } from '$lib/utils/projects';
 
 import type { Actions } from './$types';
-
-function normalizeSimpleIcon(name: string): string {
-	const mapping: Record<string, string> = {
-		node: 'nodedotjs',
-		js: 'javascript',
-		ts: 'typescript',
-		express: 'express',
-		react: 'react',
-		svelte: 'svelte',
-		tailwind: 'tailwindcss',
-		laravel: 'laravel',
-		pocketbase: 'pocketbase',
-		mongo: 'mongodb',
-		mysql: 'mysql',
-		postgres: 'postgresql',
-		prisma: 'prisma',
-		bun: 'bun',
-		hetzner: 'hetzner',
-		astro: 'astro',
-		sqlite: 'sqlite',
-		drizzle: 'drizzle',
-		vercel: 'vercel',
-		go: 'go',
-		c: 'c',
-		html: 'html',
-		css: 'css'
-	};
-
-	const normalized = name.toLowerCase().replace(/[^a-z0-9]/g, '');
-
-	return mapping[normalized] ?? normalized;
-}
 
 export const actions: Actions = {
 	createProject: async ({ request, cookies }) => {
@@ -47,7 +16,7 @@ export const actions: Actions = {
 		const stackRaw = formData.get('stack');
 		const stack = JSON.parse(stackRaw as string);
 		// Normalizar para simple-icons
-		const normalizedStack = stack.map(normalizeSimpleIcon);
+		const normalizedStack = normalizeStack(stack);
 
 		//Fazer algumas validações básicas.
 
