@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import type { Project } from '$data/projects';
 
 export const load: PageServerLoad = async ({ params, fetch }) => {
 	const res = await fetch(`http://localhost:3000/api/projects/${params.id}`);
@@ -9,7 +8,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
 		throw error(404, 'Projeto não encontrado');
 	}
 
-	const projeto: Project = await res.json();
+	const project = await res.json();
 
-	return { projeto };
+	return { project };
 };

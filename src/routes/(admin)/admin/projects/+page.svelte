@@ -45,13 +45,19 @@
 							<a class="text-indigo-500 hover:underline" href={project.github}>Github</a></td
 						>
 						<td class="flex gap-2">
-							<button type="button" class="btn-icon" title="Edit" aria-label="Edit">
+							<a
+								href={`/admin/projects/${project._id}/edit`}
+								type="button"
+								class="btn-icon"
+								title="Edit"
+								aria-label="Edit"
+							>
 								<FilePenLine />
-							</button>
+							</a>
 							<form
 								method="POST"
 								action="/admin/projects/deleteProject"
-								onsubmit={(e) => confirmDelete(e, project._id)}
+								onsubmit={(e) => confirmDelete(e, _id)}
 							>
 								<input type="hidden" name="id" value={project._id} />
 								<button

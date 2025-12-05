@@ -8,6 +8,16 @@ declare global {
 				role: string;
 			} | null;
 			authenticated: boolean;
+			project: {
+				_id?: string;
+				title: string;
+				subtitle: string;
+				description: string;
+				stack?: string[];
+				imageUrl?: string;
+				link?: string;
+				github: string;
+			};
 		}
 	}
 }
