@@ -40,40 +40,78 @@ class ApiClient {
     try {
       const response = await fetch(url, config);
 
-      // Se a resposta tiver Set-Cookie, atualiza os cookies do SvelteKit
-      if (cookies && response.headers.get('set-cookie')) {
-        const setCookieHeader = response.headers.get('set-cookie');
+      // DEBUG: Tenta acessar Set-Cookie de diferentes formas
+      console.log('=== DEBUG COOKIE ===');
+      console.log('Endpoint:', endpoint);
+      console.log('Response status:', response.status);
 
-        // Melhor parsing do cookie - tenta múltiplos formatos
-        // Express-session geralmente retorna: sessionId=valor; Path=/; HttpOnly; SameSite=Lax
-        const cookieName = 'sessionId'; // Nome do cookie de sessão
+      // Tenta diferentes formas de acessar Set-Cookie
+      const setCookie1 = response.headers.get('set-cookie');
+      const setCookie2 = response.headers.get('Set-Cookie');
 
-        // Tenta extrair o valor do cookie de forma mais robusta
-        // Formato esperado: sessionId=valor; ou sessionId=valor; Path=...
-        const cookieMatch = setCookieHeader.match(
-          new RegExp(`${cookieName}=([^;\\s]+)`, 'i')
-        );
-
-        if (cookieMatch && cookieMatch[1]) {
-          const cookieValue = cookieMatch[1];
-
-          // Extrai atributos do cookie se presentes
-          const pathMatch = setCookieHeader.match(/Path=([^;]+)/i);
-          const httpOnlyMatch = setCookieHeader.match(/HttpOnly/i);
-          const sameSiteMatch = setCookieHeader.match(/SameSite=([^;]+)/i);
-          const secureMatch = setCookieHeader.match(/Secure/i);
-          const maxAgeMatch = setCookieHeader.match(/Max-Age=(\d+)/i);
-
-          const cookieOptions = {
-            path: pathMatch ? pathMatch[1].trim() : '/',
-            httpOnly: !!httpOnlyMatch,
-            sameSite: sameSiteMatch ? sameSiteMatch[1].trim().toLowerCase() : 'lax',
-            secure: secureMatch ? true : (env.NODE_ENV === 'production' || env.PUBLIC_NODE_ENV === 'production'),
-            maxAge: maxAgeMatch ? parseInt(maxAgeMatch[1]) : 14 * 24 * 60 * 60 // 14 dias default
-          };
-
-          cookies.set(cookieName, cookieValue, cookieOptions);
+      // Tenta acessar headers raw (se disponível)
+      let setCookieHeader = null;
+      if (response.headers.raw && typeof response.headers.raw === 'function') {
+        const rawHeaders = response.headers.raw();
+        setCookieHeader = rawHeaders['set-cookie'] || rawHeaders['Set-Cookie'];
+        if (Array.isArray(setCookieHeader)) {
+          setCookieHeader = setCookieHeader.join(', ');
         }
+      } else if (setCookie1) {
+        setCookieHeader = setCookie1;
+      } else if (setCookie2) {
+        setCookieHeader = setCookie2;
+      }
+
+      console.log('Set-Cookie (get):', setCookie1 || setCookie2);
+      console.log('Set-Cookie (raw):', setCookieHeader);
+      console.log('All response headers:', Object.fromEntries(response.headers.entries()));
+
+      // Se a resposta tiver Set-Cookie, atualiza os cookies do SvelteKit
+      if (cookies && setCookieHeader) {
+        console.log('Raw Set-Cookie:', setCookieHeader);
+
+        // Processa o cookie
+        const allCookies = setCookieHeader.split(',').map(c => c.trim());
+        console.log('Parsed cookies array:', allCookies);
+
+        for (const cookieString of allCookies) {
+          const nameValueMatch = cookieString.match(/^([^=]+)=([^;]+)/);
+          if (nameValueMatch) {
+            const cookieName = nameValueMatch[1].trim();
+            const cookieValue = nameValueMatch[2].trim();
+
+            console.log(`Found cookie: ${cookieName} = ${cookieValue}`);
+
+            const pathMatch = cookieString.match(/Path=([^;]+)/i);
+            const httpOnlyMatch = cookieString.match(/HttpOnly/i);
+            const sameSiteMatch = cookieString.match(/SameSite=([^;]+)/i);
+            const secureMatch = cookieString.match(/Secure/i);
+            const maxAgeMatch = cookieString.match(/Max-Age=(\d+)/i);
+
+            const cookieOptions = {
+              path: pathMatch ? pathMatch[1].trim() : '/',
+              httpOnly: !!httpOnlyMatch,
+              sameSite: sameSiteMatch ? sameSiteMatch[1].trim().toLowerCase() : 'lax',
+              secure: secureMatch ? true : (env.NODE_ENV === 'production' || env.PUBLIC_NODE_ENV === 'production'),
+            };
+
+            if (maxAgeMatch) {
+              cookieOptions.maxAge = parseInt(maxAgeMatch[1]);
+            }
+
+            console.log(`Setting cookie ${cookieName} with options:`, cookieOptions);
+            cookies.set(cookieName, cookieValue, cookieOptions);
+            console.log(`Cookie ${cookieName} set successfully`);
+          }
+        }
+
+        const allCookiesAfter = cookies.getAll();
+        console.log('All cookies after setting:', allCookiesAfter.map(c => `${c.name}=${c.value}`));
+        console.log('=== END DEBUG ===');
+      } else {
+        console.log('No Set-Cookie header found in response');
+        console.log('=== END DEBUG ===');
       }
 
       const contentType = response.headers.get('content-type');
